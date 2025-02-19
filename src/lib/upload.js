@@ -1,0 +1,37 @@
+import { getDownloadURL, uploadBytesResumable,ref } from "firebase/storage";
+import { storage } from "./firebase";
+
+
+const upload = async(file) =>{
+
+    const date = new Date()
+
+    const storageRef = ref(storage, `images/${date + fie.name}`);
+
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+
+return new Promise((resolve,reject) =>{ 
+
+    uploadTask.on('state_changed', 
+        (snapshot) => {             n 
+            
+            
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+        }, 
+        (error) => {
+            reject("something went wront" + error.code)
+        }, 
+        () => {
+      
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            resolve(downloadURL)
+          });
+        }
+      );
+    });
+};
+
+
+export default upload
