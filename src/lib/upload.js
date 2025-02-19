@@ -28,6 +28,7 @@ return new Promise((resolve,reject) =>{
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             resolve(downloadURL)
           });
+          
         }
       );
     });
