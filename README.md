@@ -1,3 +1,6 @@
-# Lama Dev Chat App Starter template
+# Chat App for Motivea
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The purpose of this Chat App is to be used inside my website for chatting system inside the website
+
+
+Linkora INC
