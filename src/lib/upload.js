@@ -15,8 +15,7 @@ return new Promise((resolve,reject) =>{
 
     uploadTask.on('state_changed', 
         (snapshot) => {             n 
-            
-            
+              
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log('Upload is ' + progress + '% done');
         }, 
